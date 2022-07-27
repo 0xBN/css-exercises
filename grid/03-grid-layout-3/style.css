@@ -3,8 +3,17 @@
   padding: 0;
 }
 
+body {
+  background-color: black;
+}
+
 .container {
   text-align: center;
+  height:100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr .5fr 5fr .5fr;
+  gap:4px;
 }
 
 .container div {
@@ -13,10 +22,29 @@
   font-family: Helvetica;
   font-weight: bold;
   color: white;
+  border-radius: 5px;
+}
+
+.logo {
+  grid-column: 1;
+  text-align: start;
+}
+.menu {
+  grid-column: 2/4;
 }
 
 .header {
   background-color: #393f4d;
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+
+.menu ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .menu ul,
@@ -25,27 +53,45 @@
 }
 
 .sidebar {
-  background-color: #FF7755;
+  background-color: #7d3929;
+  grid-column: 1;
+  grid-row: 2/4;
+  display: grid;
+  gap: 50px;
 }
 
 .sidebar .photo {
-  background-color: white;
+  background-color: #5a5a5a;
   color: black;
   font-size: 12px;
   font-weight: normal;
   border-radius: 10px;
+  grid-column: 1/2;
 }
 
 
 .sidebar .side-content {
-  background-color: white;
+  background-color: #5a5a5a;
   color: black;
   font-size: 16px;
   font-weight: normal;
 }
 
+.sidebar .side-content, 
+.sidebar>.photo {
+  display: grid;
+  align-items: center;
+}
+
 .nav {
-  background-color: #FF7755;
+  background-color: #7d3929;
+  grid-column: 2/-1;
+  grid-row: 2;
+}
+
+.nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .nav ul li {
@@ -55,6 +101,12 @@
 
 .article {
   background-color: #bccbde;
+  grid-column: 2/-1;
+  grid-row: 3/4;
+  /* background-color: pink; */
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
 }
 
 .article p {
@@ -65,13 +117,15 @@
 }
 
 .article .card {
-  background-color: #FFFFFF;
-  color: black;
+  background-color: #5a5a5a;
+  color: white;
   text-align: center;
+  height: 200px;
+  /* aspect-ratio: 1; */
 }
 
 .card p {
-  color: black;
+  color: white;
   font-weight: normal;
   font-size: 14px;
 }
@@ -83,9 +137,15 @@
 
 .footer {
   background-color: #393f4d;
+  grid-column: 1/-1;
+  grid-row: 4/-1;
 }
 
 .footer p {
   font-size: 13px;
   font-weight: normal;  
+}
+
+li {
+  list-style: none;
 }
