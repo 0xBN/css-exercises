@@ -1,6 +1,7 @@
 body, html {
   height: 100%;
   margin: 0;
+  background-color: black;
 }
 
 .container {
@@ -20,21 +21,21 @@ body, html {
 }
 
 .header {
-  background-color: #FFDE22;
+  background-color: #907b00;
   grid-column: 1 / 3;
 }
 
 .sidebar {
-  background-color: #FF7755;
+  background-color: #a43c22;
   grid-row: 2 / 4;
 }
 
 .nav {
-  background-color: #00DDFF;
+  background-color: #007688;
 }
 
 .article {
-  background-color: #bccbde;
+  background-color: #686f79;
 }
 
 .article p {
